@@ -1,0 +1,86 @@
+\documentclass[UTF8, a4paper]{ctexart}
+
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{lastpage}
+\usepackage{indentfirst}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings} 
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{makecell}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\geometry{left=2cm, right=2cm, top=3cm, bottom=2.5cm}
+
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\lhead{2021 NUIST 新生红包赛}
+\rhead{\leftmark}
+\renewcommand{\headrulewidth}{1pt}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\footrulewidth}{1pt}
+
+\setmainfont{Times New Roman}
+\setmonofont{JetBrains Mono NL}
+\newfontfamily\sectionfont{Microsoft YaHei}
+\newfontfamily\limitfont{Times New Roman}
+\titleformat*{\section}{\huge\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+
+% Set distance from top of page to first float
+\makeatletter
+\setlength{\@fptop}{5pt}
+
+\newcommand\noidsection{\par
+  \setcounter{section}{0}
+  \setcounter{subsection}{0}
+  \renewcommand\thesection{\relax}
+  \def\@seccntformat##1{\@nameuse{the##1}}
+  \addtocontents{toc}{\def\cftsecnumwidth{0pt}}}
+\makeatother
+
+\newcommand{\tablecell}[1]{\begin{tabular}[c]{@{}l@{}}#1\end{tabular}}
+
+\lstset{
+    backgroundcolor=\color{white},            
+    % choose the background color
+    basicstyle=\footnotesize\ttfamily,
+    % size of fonts used for the code
+    columns=fixed,
+    breaklines=true,
+    numberstyle=\tiny, 
+    % automatic line breaking only at whitespace
+    captionpos=b,
+    % sets the caption-position to bottom
+    tabsize=4,
+    commentstyle=\color{gray},
+    % comment style
+    escapeinside={\%*}{*)},
+    % if you want to add LaTeX within your code
+    keywordstyle=\color{blue},
+    % keyword style
+    stringstyle=\color[RGB]{0,39,102},
+    % string literal style
+    frame=single,
+    rulesepcolor=\color[RGB]{20,20,20},
+    % numbers=left, 
+    % line numbers' pos
+    % numberstyle=\color[RGB]{0,192,192},
+    % line numbers' font
+    % identifierstyle=\color{red},
+    language=C++,
+    % set code language
+    showtabs=false,
+    % show tabs within strings adding particular underscores
+    stepnumber=1,
+    % the step between two line-numbers. If it's 1, each line will be numbered
+}

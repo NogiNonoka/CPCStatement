@@ -1,0 +1,52 @@
+\newpage
+\section{Problem C 提瓦特炼金术}
+{ \limitfont{}
+Input file: standard input \par
+Output file: standard output \par
+Time limit: 1000ms \par
+Memory limit: 512MB \par
+}
+\subsection*{题目描述}
+
+{\kaishu “地水火风，领我敕命。再造四大，重塑五行。”}
+
+$wzy$ 从阿贝多那学到了神奇的炼金术，其原理如下：
+
+$Fe + Cr == Fr +Ce$
+
+$Ce + Ru == Cu +Re$
+
+$Cu + As = = Au + Cs$
+
+$Au+Lr==Ar+Lu$
+
+$Ar+Fu==Au+Fr$
+
+$Fr+Ce==Fe+Cr$
+
+通过这些方程式，他就可以将铁炼制成铜，将铜炼制成金，将金炼制成铁。
+
+但由于 $wzy$ 的炼金技术有限，他只能将 $a$ 克的铁炼制成 $b$ 克的铜，将 $c$ 克的铜炼制成 $d$ 克的黄金，将 $e$ 克的黄金炼制成 $f$ 克的铁。现在他想知道他能否通过有限的铁炼制出无限的黄金(可以视为最初只有有限质量的铁，没有铜和金)。
+
+$wzy$ 当然知道解，但他还要去蒙德城门口喂鸽子，所以他把这个问题交给了你。
+
+\subsection*{输入描述}
+
+输入有多行，第一行包含一个正整数 $T$ ，接下来共有 $T$ 行，每行包含 $6$ 个整数 $a,b,c,d,e,f$，$0<a,b,c,d,e,f\le10^6$。
+
+\subsection*{输出描述}
+
+输出共 $T$ 行，每行表示一组输入的答案，每组输出占一行。如果旅行者可以通过有限质量的铁创造出无限质量的金时，输出 \lstinline|"Awesome!"| ，否则输出 \lstinline|"Stupid"| (不包括引号)。
+
+\subsection*{测试样例}
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{|X|X|}
+    \hline
+    \textbf{Standard Input} & \textbf{Standard Output} \\ 
+    \hline
+    \tablecell{2\\ 100 200 250 150 200 250\\ 1 1 1 1 10 1 \\} & 
+    \tablecell{Awesome!\\ Stupid! \\ \\} \\ 
+    \hline
+\end{tabularx}
+\end{table}
