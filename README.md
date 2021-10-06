@@ -5,13 +5,14 @@ Generate a XCPC Statement
 
 ### Titlepage
 
-- edit `titlepage.tex`
+- Edit `titlepage.tex`
 
 ### Problems
 
+- Tempalte file `./problem/template.tex`
 - Add Problem files into folder `./problem/`
-- Add `\input{./problem/*.tex}` or `\include{./problem/*.tex}` into `statement.tex`
+- Add `\input{./problem/*.tex}` or `\include{./problem/*.tex}` into `statements.tex`
 
 ## Build
 
-build with xeLaTex
+Build with xeLaTex
