@@ -3,6 +3,10 @@ Generate a XCPC Statement
 
 ## How to use
 
+### Packages
+
+- edit `header.tex`
+
 ### Titlepage
 
 - Edit `titlepage.tex`
@@ -15,4 +19,4 @@ Generate a XCPC Statement
 
 ## Build
 
-Build with xeLaTex
+Build with xeLaTeX
