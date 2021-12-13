@@ -9,7 +9,7 @@ Generate a XCPC Statement
 
 ### Titlepage
 
-- Edit `titlepage.tex`
+- edit `titlepage.tex`
 
 ### Problems
 
