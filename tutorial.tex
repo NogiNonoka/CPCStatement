@@ -1,0 +1,59 @@
+\documentclass[UTF8]{ctexbeamer}
+\usetheme{Berlin}
+
+\usepackage{
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	enumerate,		    % Enumerate Environments
+	graphicx,			% Include Images
+	lastpage,			% Reference Lastpage
+	multicol,			% Use Multi-columns
+	multirow,			% Use Multi-rows
+	pifont,			    % For Checkmarks
+	stmaryrd,			% For brackets
+    listings,           % For code
+    bookmark,
+    fontspec
+}
+
+\lstset{
+    % backgroundcolor=\color[RGB]{233, 233, 243},         
+    basicstyle=\ttfamily,
+    columns=fixed,
+    breaklines=true,
+    numberstyle=\tiny, 
+    captionpos=b,
+    tabsize=4,
+    commentstyle=\color{gray},
+    escapeinside={\%*}{*)},
+    keywordstyle=\color{blue},
+    stringstyle=\color[RGB]{0,39,102},
+    frame=none,
+    rulesepcolor=\color[RGB]{20,20,20},
+    language=C++,
+    showtabs=false,
+}
+
+\title{Title}
+\subtitle{Subtitle}
+\author{Author}
+\institute{Institute}
+\date{\today}
+
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Table of Contents}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\begin{document}
+\frame{\titlepage}
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+\input{./solution/template}
+\input{./solution/template}
+\end{document}
