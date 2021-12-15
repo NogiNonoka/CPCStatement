@@ -1,36 +1,54 @@
 \newpage
-\section{Problem B 做饭}
+\section{Problem B - Day before yesterday I saw a rabbit, and yesterday a deer, and today, you}
 { \limitfont{}
 Input file: standard input \par
 Output file: standard output \par
 Time limit: 1000ms \par
-Memory limit: 512MB \par
+Memory limit: 64MB \par
 }
 \subsection*{题目描述}
+The girl on the hill made Mark think of Edna St. Vincent Millay. Perhaps it was because of the way she was standing there in the afternoon sun, her dandelion-hued hair dancing in the wind; perhaps it was because of the way her old-fashioned white dress was swirling around her long and slender legs. In any event, he got the definite impression that she had somehow stepped out of the past and into the present; and that was odd, because as things turned out, it wasn't the past she had stepped out of, but the future.
 
-雷电将军正在给旅行者做饭。因为旅行者着急去探险，所以雷电将军只能给旅行者做一个荤菜和一个素菜。设荤菜的美味度是 $a$，素菜的美味度是 $b$，旅行者所得到的美味度是荤菜美味度和素菜美味度的总和。
+Her eyes were blue, Mark saw when he came up to her, as blue as the sky that framed her slender silhouette. Her face was oval and young and soft and sweet. It evoked a deja vu so poignant that he had to resist an impulse to reach out and touch her wind-kissed cheek; and even though his hand did not leave his side, he felt his fingertips tingle.
 
-俗话说“人是铁饭是钢，一顿不吃饿得慌”。如果旅行者吃不饱饭，他所感受到的美味度会大大降低。
-准确的，如果雷电将军做荤菜或者素菜的份量是原来的 $\frac{1}{x}$ $(x \ge 1)$ 
-那么他感受到的美味度是 $\lfloor(\frac{1}{x})^2 *a\rfloor$ 或者 $\lfloor (\frac{1}{x})^2*b \rfloor$ 。
-然而，雷电将军并不擅长做饭。如果雷电将军把荤菜或者素菜烧糊了，那么这道菜的美味度是$\lfloor -(\frac{1}{x})^2 *a\rfloor$ 
-或者 $\lfloor-(\frac{1}{x})^2 *b\rfloor$。
+``Are you enjoying the view?'', Mark said.
 
-举个例子，假设 $a=100,b=50$。若雷电将军只做了 $\frac{1}{2}$ 分量的荤菜，
-则旅行者获得的美味度是 $100*(\frac{1}{4})+50=75$，倘若雷电将军一不小心把这 $\frac{1}{2}$ 份量的荤菜做糊了，
-那么美味度则是 $-100*(\frac{1}{4})+50=25$。
+``Oh, yes. Isn't it simply marvelous!'', Julie said.
 
-雷电将军可能会把饭做糊，也可能会缺斤少两，但她想尽可能提高两道菜的美味度。请聪明的你帮她算一算在最好的情况下美味度最大是多少。
+``Are you from the city too?'', Mark asked.
 
-注：$\lfloor x \rfloor$ 的意思是把 $x$ 向下取整，例如 $\lfloor 15.8 \rfloor = 15$。
+``In a way I am,'' Julie said. She smiled at him. ``I'm from the Cove City of two hundred and forty years from now.''
 
+The smile told him that she didn't really expect him to believe her, but it implied that it would be nice if he would pretend. He smiled back.
+
+``I suppose you traveled here by time machine.'' Mark said.
+
+``Yes. My father invented one.''
+
+He looked at her closely. He had never seen such a guileless countenance. ``And do you come here often?''
+
+``Oh, yes. This is my favorite space-time coordinate. I stand here for hours sometimes and look and look and look. Day before yesterday I saw a rabbit, and yesterday a deer, and today, you.''
+
+......
+
+{\hfill —— Extract from Robert Franklin Young 《The Dandelion Girl》}
+
+~\\
+
+\textbf{In the story}, Julie traveled here by time machine. Now given the date when Julie **arrived** here and what she saw today, according to ``Day before yesterday I saw a rabbit, and yesterday a deer, and today, you.'', can you tell Julie when she will meet Mark next time?
+
+In addition, \textbf{leap year} is a calendar year that contains an additional day. Each leap year has 366 days instead of 365, by extending February to 29 days rather than the common 28. These extra days occur in each year which is an integer multiple of 4 (except for years evenly divisible by 100, but not by 400). 
 \subsection*{输入描述}
 
-第一行输入两个正整数 $a,b(1 \leq a,b \leq 10^9)$，中间用空格隔开。
+The first line contains three integers $y, m, d \ (2000 \le y \le 2299, 1 \le m \le 12, 1 \le d \le 31)$ denoting the date when Julie arrived here.
+
+The second line contains a string $s$，$s$ equals to $Rabbit$ or $Dear$ or $Mark$, denoting the thing Julie saw when Julie arrived.
+
+It is guaranteed that the date is legal.
 
 \subsection*{输出描述}
 
-输出一个整数，表示最高的美味度。
+Output one line containing three integers $y, m, d$, denoting the \textbf{next} date $Julie$ will meet $Mark$.
 
 \subsection*{测试样例}
 
@@ -39,7 +57,19 @@ Memory limit: 512MB \par
     \hline
     \textbf{Standard Input} & \textbf{Standard Output} \\ 
     \hline
-    114514 1919810 & 2034324 \\
+    \tablecell{
+        2000 2 28 \\
+        Mark \\
+    } & \tablecell{
+        2000 3 2 \\ \\
+    } \\ 
+    \hline
+    \tablecell{
+        2000 12 31 \\
+        Dear    \\
+    } & \tablecell{
+        2001 1 1 \\ \\
+    } \\
     \hline
 \end{tabularx}
 \end{table}
