@@ -1,31 +1,47 @@
 \newpage
-\section{Problem J - 斯特拉的Colate}
+\section{Problem J \ \ Superdog and Spdddddddddd}
 { \limitfont{}
-Input file: standard input \par
-Output file: standard output \par
+Input file: Standard Input \par
+Output file: Standard Output \par
 Time limit: 1000ms \par
-Memory limit: 64MB \par
+Memory limit: 512MB \par
 }
 \subsection*{题目描述}
+Superdog和Spdddddddddd最近沉迷扫雷。但是，由于Superdog和Spdddddddddd的手速不相上下，速度上的比拼让他们非常疲惫与无聊。
 
-dust 在网上找到了一个解谜小游戏，在这个小游戏里面，主角珠辉发现了一个叫做 ``Colate'' 的道具， 
-``Colate'' 实际上是一个长为 n 的整数数列。任意一个整数数列都有其 ``ma'' 值和 ``stl'' 值，
-一个长为 n 的整数数列的 ``ma'' 值为 $ma = \max\limits_{1<=l<=r<=n}\sum\limits_{i = l}^r a_i$ 
-(其中 $a_i$ 为数列的第 n 项)，``stl'' 值为$stl = \sum\limits_{1<=l<=r<=n} \left[ (\sum\limits_{i=l}^r a_i) = ma\right]$ (中括号内等号成立值为1，不成立值为0)。
-一个数列的第 $i$ 个前缀子数列为这个数列的前 $i$ 项组成的数列，要正确使用 ``Colate'' ，
-就必须算出 ``Colate'' 的所有前缀子数列的 ``stl'' 值，dust 虽然算出来了，但是他不确定是否正确，所以请你来写一个程序来计算。
+Superdog突发奇想，想到了一种更加刺激（玄学）的方法进行游戏。他们通过第一次点击后，出现的所有数字的加和来决定胜负。如果为奇数，则Superdog获胜。否则，Spdddddddddd获胜。
 
+本题中，扫雷遵循下面的规则：
+\begin{itemize}
+    \item 在任意时刻，只要某个格子格子被翻开，如果「周围格子」都没有雷，这个格子的「周围格子」会被立刻翻开。被翻开的「周围格子」会递归地应用此规则。
+    \item 对于不同位置的格子，其「周围格子」如下所示
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./src/d1.png}
+\end{figure}
+每个绿色格子周围的红色格子是其「周围格子」
+
+样例2的游戏图：
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{./src/d2.png}
+\end{figure}
+所有数字累加和为65。
 \subsection*{输入描述}
+第一行四个整数$m,n,a,b$，代表扫雷格点的长度和宽度，以及第一次点击的格子坐标$(a,b)$。
 
-第一行一个整数 n
+接下来输入一个$m$行$n$列的$01$矩阵，$0$代表这个点没有雷，$1$代表这个点有雷。
 
-第二行 n 个整数，表示 ``Colate'' 的 1  到 n 项
+本题中左上角坐标为$(1,1)$,保证第一次不会点到雷。
 
+$1 < n, m \le 500$。
 \subsection*{输出描述}
 
-输出 n 行
+如果Superdog获胜则输出``Superdog''。
 
-第 i 行输出一个整数表示 ``Colate'' 的第 i 个前缀子数列的 "stl" 值
+如果Spdddddddddd获胜，则输出``Spdddddddddd''。
 
 \subsection*{测试样例}
 
@@ -35,20 +51,36 @@ dust 在网上找到了一个解谜小游戏，在这个小游戏里面，主角
     \textbf{Standard Input} & \textbf{Standard Output} \\ 
     \hline 
     \tablecell{
-        6 \\
-        1 -1 4 -5 1 4 \\ \\ \\ \\ \\
+        10 9 1 9 \\
+        100000000 \\
+        000000000 \\
+        000000000 \\
+        010100001 \\
+        000000000 \\
+        000000000 \\
+        101000000 \\
+        001100000 \\
+        000010001 \\
+        000000100 \\
     } & 
+    \tablecell{Spdddddddddd \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\} \\
+    \hline
     \tablecell{
-    1 \\
-    1 \\
-    2 \\
-    2 \\
-    2 \\
-    1 \\
-
+        10 15 1 1 \\
+        000000000000000 \\
+        000000000010000 \\
+        001001000000000 \\
+        000100000000000 \\
+        000000000000010 \\
+        000000000110000 \\
+        000000000000000 \\
+        001000010000000 \\
+        000000000000000 \\
+        001000000000000 \\
+    } & \tablecell{
+        Superdog \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
     } \\
     \hline
 \end{tabularx}
 \end{table}
-\subsection*{数据描述}
-对于 $100\%$ 的数据，$n <= 100000 , |a_i| <= 100$
+

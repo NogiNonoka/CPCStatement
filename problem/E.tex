@@ -1,34 +1,33 @@
 \newpage
-\section{Problem E - a+b问题}
+\section{Problem E \ \ 传送带}
 { \limitfont{}
-Input file: standard input \par
-Output file: standard output \par
+Input file: Standard Input \par
+Output file: Standard Output \par
 Time limit: 1000ms \par
-Memory limit: 64MB \par
+Memory limit: 512MB \par
 }
-
 \subsection*{题目描述}
-
-ml 喜欢吃彩虹糖、棒棒糖和巧克力糖。但是 ml 花了太多钱请漂亮姐姐吃饭而变得贫穷，所以 ml 只能每 $b_1$ 天买一次彩虹糖，每 $b_2$ 天买一次棒棒糖，每 $b_3$ 天买一次巧克力糖。注意：买 $3$ 种糖是独立进行的，ml 并没有贫穷到需要思索要买哪一种糖。
-
+在一个空旷的地面上，dust把一些大小为1m * 1m的传送带组装成一个n行m列的矩形，如图所示
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{./src/e.png}
+    \includegraphics[scale=0.4]{./src/h.png}
 \end{figure}
+传送带一共有上下左右 $4$ 种传送方向，可以把在其上面的物品以 $1m/s$ 的速度沿其传送方向传送。
 
-ml 希望有一种策略，使得 ml 每天都能吃到糖（即彩虹糖，棒棒糖，巧克力糖其中一种或者多种）。
+\textbf{输入保证传送带的方向一定指向其他传送带而不是空地}
 
-准确地，ml 会选择 $a_1,a_2,a_3$ 分别做为第一次购买彩虹糖、棒棒糖和巧克力糖的日期，这样他在第 $a_1,a_1+b_1,a_1+2b_1,a_1+3b_1,\dots$ 天会购买彩虹糖；在第 $a_2,a_2+b_2,a_2+2b_2,a_2+3b_2,\dots$ 天会购买棒棒糖；在第 $a_3,a_3+b_3,a_3+2b_3,a_3+3b_3,\dots$ 天会购买巧克力糖。
-
-请问是否存在一组 $a_1,a_2,a_3$ 使得 ml 从某一天开始，每天都能吃到糖；存在输出 ``YES''，不存在则输出 ``NO''。
-
+dust 现把一个物品放到第 $x$ 行第 $y$ 列，问经过 $t$ 秒后该物品在第几行第几列
 \subsection*{输入描述}
+第一行两个整数 $n,m(2 \le n,m \le 10^3; n \times m \le 2 \times 10^5)$
 
-输入一行，包括三个正整数 $b_1,b_2,b_3$（$1\leq b_1,b_2,b_3\leq 1000$），使用空格分隔。
+下面 $n$ 行，每行 $m$ 个字母，其中第 $i$ 行的第 $j$ 个字母表示传送带的方向(' $U$ ',' $D$ ',' $L$ ',' $R$ '分别表示上下左右)
 
+接下来一行一个整数 $q(1 \le q \le 2 \times 10^5)$,表示询问的次数
+
+下面 $q$ 行，每行 $3$ 个整数 $x,y,t(1 \le x \le n,1 \le y \le m,1 \le t \le 10^{18})$
 \subsection*{输出描述}
 
-输出 ``YES'' 或者 ``NO''。
+对于每次询问，输出一行两个整数，分别表示 $t$ 秒后该物品位置在第几行和第几列
 
 \subsection*{测试样例}
 
@@ -38,28 +37,21 @@ ml 希望有一种策略，使得 ml 每天都能吃到糖（即彩虹糖，棒�
     \textbf{Standard Input} & \textbf{Standard Output} \\ 
     \hline 
     \tablecell{
-        1 1 1 \\
+        4 5 \\
+        R R D D D \\
+        D D R R D \\
+        R U R U U \\
+        U L L R U \\
+        4 \\
+        1 1 10 \\
+        4 5 10 \\
+        3 3 10 \\
+        2 2 10 \\
     } & 
-    \tablecell{YES \\} \\
-    \hline
-    \tablecell{
-        2 2 2 \\
-    } & \tablecell{
-        YES \\
-    } \\
-    \hline
-    \tablecell{
-        3 3 3 \\
-    } & \tablecell{
-        YES \\
-    } \\
-    \hline
-    \tablecell{
-        2 3 4 \\
-    } & \tablecell{
-        NO
-    } \\
+    \tablecell{3 5 \\
+    2 5 \\
+    3 5 \\
+    2 2 \\ \\ \\ \\ \\ \\ \\} \\
     \hline
 \end{tabularx}
 \end{table}
-    

@@ -1,27 +1,28 @@
 \newpage
-\section{Problem F - Superdog's Kindergarten Mathematics}
+\section{Problem F \ \ 可可的说唱}
 { \limitfont{}
-Input file: standard input \par
-Output file: standard output \par
+Input file: Standard Input \par
+Output file: Standard Output \par
 Time limit: 1000ms \par
-Memory limit: 64MB \par
+Memory limit: 512MB \par
 }
 \subsection*{题目描述}
-Superdog某天突发奇想，提出了这样一个问题：
-
-已知两个正整数$n,m$，$a+b=m,a>0,b>0$,求 $f(x)=\frac{1}{a^2+n} + \frac{1}{b^2+n}$的最大值。
-
-由于这个对称的式子非常的美，Superdog计算了很多种$n,m$情况下$f(x)$的值，现在想让你帮忙验证一下计算结果的。
+可可的好友堇最近在为了学园偶像祭练习说唱。为了给堇写出更好的说唱歌词，可可想要找出尽可能多的拥有相同韵脚的单词（韵脚本身不能作为一个单词）。可可的中英日文都很好，一共认识 $n$ 个单词，她想要尽可能多的选择具有相同韵脚 $t$ 的单词。同时为了防止堇忘记歌词，可可所选择的单词字符总数不能超过 $x$ 个字母。告诉你可可认识的所有单词与她选择的韵脚，你能算出可可最多可以选择多少个单词吗。
 \subsection*{输入描述}
 
-第一行一个整数$T$。表示有$T$组询问。
+一行一个整数 $n \ ( 1 \le n \le 100000)$ 表示可可认识的单词数量。
 
-每行两个正整数$n,m$。
+接下来 $n$ 行，每行一个字符串 $s$（仅包括大写和小写英文字母）表示可可认识的单词（题目保证输入单词无重复）。
+
+一行一个整数 $q \ (1 \le q \le 100000)$ 表示询问次数。
+
+接下来 $q$ 行，每行一个字符串 $t \ ( 1 \le |t| \le 1000)$ 表示可可选择的单词的韵脚，一个整数 $x \ (1 \le x \le 100000000)$ 表示可可能够记忆的字符总数。
+
+题目保证 $\sum |s| \le 200000$。
 
 \subsection*{输出描述}
 
-每行一个浮点数，表示$f(x)$的最大值。
-如果误差小于$10^{-6}$，Superdog则认为正确。
+$q$ 行，每行一个整数，表示可可最多可以记住的单词数量。
 
 \subsection*{测试样例}
 
@@ -31,32 +32,21 @@ Superdog某天突发奇想，提出了这样一个问题：
     \textbf{Standard Input} & \textbf{Standard Output} \\ 
     \hline 
     \tablecell{
-        9 \\
-    10 2 \\
-    5 2 \\
-    3 2 \\
-    2021 1 \\
-    2022 1 \\
-    2023 4 \\
-    2024 5 \\
-    2025 1 \\
-    2026 4 \\
+        4 \\
+        ao \\
+        HeyYoQieKeNao \\
+        JianBingGuoZiLaiYiTao \\
+        TangKeKeWoZuiShanYao \\
+        2 \\
+        ao 34 \\
+        ao 55 \\
     } & 
-    \tablecell{0.18181818  \\
-    0.33333333 \\
-    0.50000000 \\
-    0.00098949 \\
-    0.00098900 \\
-    0.00098668 \\
-    0.00098510 \\
-    0.00098753 \\
-    0.00098522 \\} \\
+    \tablecell{
+        2 \\
+        3 \\ \\ \\ \\ \\ \\ \\
+    } \\
     \hline
 \end{tabularx}
 \end{table}
-\subsection*{数据范围}
-$1 \leq T \leq 1000000$
-
-$1 \leq n,m \leq 1e9$
-\subsection*{Hints}
-Think about n=1 and m=2
+\subsection*{样例解释}
+可可认识四个单词，当选择韵脚为 \lstinline{t = "ao"} 时，除了韵脚本身，剩余三个单词均可被选择 `x = 34` 时最多选择第一个与第二个或第一个与第三个，\lstinline{x = 55} 时三个单词可以全选。
