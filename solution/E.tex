@@ -1,0 +1,22 @@
+\section{E}
+\begin{frame}
+\frametitle{E - 传送带}
+难度：Hard
+
+类型：思维 / 图论
+
+\begin{block}{STD 做法}
+给每个格子标号，算出每个格子走一步走到哪格，再用倍增算出每个格子走$2 , 4 , 8 , 16 ,32 \dots$步走到哪里
+
+对于每次询问可以将$t$二进制分解，$O(log t)$时间内算出答案
+
+例如在$ x $格子走 $ 15 $步等于在$ x $格子先走$ 1 $步，再走$2$步，$4$步，$8$步
+\end{block}
+
+\begin{block}{离线做法}
+    手动栈 + DFS
+
+    对询问排序，DFS 判环和链。
+\end{block}
+
+\end{frame}

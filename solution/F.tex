@@ -3,4 +3,23 @@
 \frametitle{F - 可可的说唱}
 难度：Hard
 
+类型：字符串，数据结构
+
+\begin{block}{题意}
+满足字符串后缀为 $t$ 的串 $s$ 中，选择 $k$ 个字符串使得字符串总长度不超过 $x$，求 $k$ 最大值
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{F - 可可的说唱}
+
+复杂度：$O(Q\log(N))$
+
+\begin{block}{思路}
+对于求后缀相同的字符串，转化为字符串反转后前缀相同的字符串，建立 $trie$ 树。
+
+由于 $trie$ 树上前缀相同的字符串所包含的全部字符在 $dfs$ 过程中 $dfs$ 序连续，故维护前缀相同的字符串转化为对 $trie$ 树按 $dfs$ 序建立可持久化权值线段树。
+\end{block}
+
 \end{frame}

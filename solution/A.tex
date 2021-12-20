@@ -3,4 +3,48 @@
 \frametitle{A - a+b问题}
 难度：Medium-easy
 
+考虑$1/b_1 + 1/b_2 + 1/b_3$的数学期望大于等于$1$，$bmin$的取值可以是$1$，$2$，$3$。
+
+\begin{block}{情况 1}
+当$b_{min} = 1$ 时，显然成立。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=24em]{./solution/src/A1.png}
+\end{figure}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{A - a+b问题}
+\begin{block}{情况 2}
+当bmin = 2 时，有两种情况可以成立。
+
+B = {2,2,n}，选择两个2即可。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=24em]{./solution/src/A2.png}
+\end{figure}
+
+B = {2,4,4}，这时候b是一个2两个4。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=24em]{./solution/src/A3.png}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{A - a+b问题}
+\begin{block}{情况 3}
+当$b_{min} = 3$时，只有$B = {3,3,3}$ 时，数学期望可以达到$1$。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=24em]{./solution/src/A4.png}
+\end{figure}
+\end{block}
+
 \end{frame}

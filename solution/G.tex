@@ -1,0 +1,24 @@
+\section{G}
+\begin{frame}
+\frametitle{G - 可可的可丽饼}
+难度：Hard
+
+类型：二分图匹配 / 网络流
+
+\begin{block}{题意}
+    问题抽象为在图中选择最少数量的可向交路径，使得路径覆盖所有的点。
+\end{block}
+
+复杂度 $O(n^3)$
+
+\begin{block}{思路}
+拆点 + Floyd 求传递闭包 + 二分图最大匹配
+
+将每个点拆为 入点和出点，$u$ 与 $v$ 的有向边转化为 $u_x$ 与 $v_y$ 的边
+
+答案为 $n - \texttt{二分图最大匹配}$
+
+求二分图最大匹配也可以使用网络流相关算法。
+\end{block}
+
+\end{frame}

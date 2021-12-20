@@ -2,5 +2,36 @@
 \begin{frame}
 \frametitle{C - Superdog's Kindergarten Mathematics}
 难度：Medium-hard
+类型：数学
 
+这个式子有非常好的对称性，所以可以进行换元处理。
+\begin{block}{推导过程}
+为了方便书写，这里令 $a+b=2m$。
+
+令$a=m-t，b=m+t$
+
+得$\frac{1}{(m-t)^2+n}+\frac{1}{(m+t)^2+n}$
+
+通分得$\frac{t^2+m^2+n}{(t^2+m^2+n)-(2mt)^2}$
+
+再换元，令$k=t^2+m^2+n$，$ m^2+n <k \leq 2m^2+n$
+
+得$\frac{2k}{k^2-4m^2(k-m^2-n)}$
+
+化简得$\frac{2k}{k^2-4m^2k+4m^2(m^2+n)}$
+
+上下同除k得$\frac{2}{k+\frac{4m^2(m^2+n)}{k}-4m^2}$
+\end{block}
+\end{frame}
+
+\begin{frame}
+
+\frametitle{C - Superdog's Kindergarten Mathematics}
+\begin{block}{推导过程}
+用基本不等式得到最大值为$\frac{2}{4m\sqrt{m^2+n}-4m^2}$，$k=2m\sqrt{m^2+n}$时成立。
+
+不存在$k=2m\sqrt{m^2+n}>2m^2+n$的情况，两边平方后非常好比较不做证明。
+
+存在$k=2m\sqrt{m^2+n}<m^2+n$的情况，此时$n \leq 3m^2$，$k=m^2+n$，即$t=0$，也就是$a=b$，最大值$\frac{2}{m^2+n}$
+\end{block}
 \end{frame}
